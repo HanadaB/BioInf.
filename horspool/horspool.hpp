@@ -11,7 +11,7 @@ public:
 void setPattern (const std::string& pat);
 
 //return currently set pattern 
-const std::string& getPattern();
+const std::string& getPattern() const;
 
 //get all hits of pattern in text
 std::vector<size_t> getHits(const std::string& text) const;
@@ -19,7 +19,7 @@ std::vector<size_t> getHits(const std::string& text) const;
 protected:
 
 //use the look up table from set pattern to obtain the maximum shift distance given the last character of the current alignment in text
-uint32_t getShift (const char last_char) const;
+uint32_t getShift_(const char last_char) const;
 
 //internal check for text_position
 virtual void alignCheck_(const size_t text_pos) const{};
