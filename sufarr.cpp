@@ -57,7 +57,7 @@ int findRp(const string& query, const vector<uint32_t>& sa, const string& text){
         int mid = l +(r-l) / 2; //midpoint of the current search
 
         //compares the midpoint with the query
-        if(text.compare(sa[mid], query.size(), query) < 0){ 
+        if(text.compare(sa[mid], query.size(), query) <= 0){ 
 
             l = mid + 1; //moves the starting point if the midpoint is greater or equal
         }else{
@@ -70,7 +70,7 @@ int findRp(const string& query, const vector<uint32_t>& sa, const string& text){
 
 
 // function for searching a query string in the text using a suffix array 
-void find(const string& query, const vector<uint32_t>& sa, const string& text, const vector<uint32_t>& hits){
+void find(const string& query, const vector<uint32_t>& sa, const string& text, vector<uint32_t>& hits){
 
 hits.clear(); //clears the previous search results
 if (query.empty()) return; //end if the query is empty
